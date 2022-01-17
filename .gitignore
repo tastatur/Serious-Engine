@@ -85,7 +85,6 @@ Sources/SeriousSkaStudio/Parser.cpp
 Sources/SeriousSkaStudio/Parser.h
 Sources/SeriousSkaStudio/Scanner.cpp
 
-
-
-
-
+Release/
+Sources/libvorbis/libvorbis_dynamic.vcxproj.user
+Sources/libvorbis/libvorbisfile_dynamic.vcxproj.user

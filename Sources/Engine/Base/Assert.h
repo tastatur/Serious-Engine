@@ -41,10 +41,10 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define _assert(x, y, z) assert(0)
 #endif
 
+#ifndef ASSERT
+#define ASSERT(__ignore) ((void)0)
 
 #ifdef NDEBUG
-  #ifndef ASSERT
-    #define ASSERT(__ignore) ((void)0)
   #endif
   #define ASSERTMSG(__ignore1, __ignore2) ((void)0)
   #define ASSERTALWAYS(__ignore) ((void)0)
@@ -90,15 +90,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
   #ifndef IFDEBUG
     #define IFDEBUG(expr) 				\
       expr
-  #endif
-
-  /* CT assertion macros */
-  #ifndef ASSERT
-    #define ASSERT(expr) 				            \
-      if(!(expr)) {				                  \
-        /*SAFEBREAKPOINT;*/                     \
-        _assert(#expr,__FILE__,__LINE__);		\
-      } else NOTHING
   #endif
 
   #define ASSERTALWAYS(msg)			                \
